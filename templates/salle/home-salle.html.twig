@@ -1,0 +1,56 @@
+{% extends "base.html.twig" %}
+
+{% set active = 'home_salle' %}
+
+{% block body %}
+
+{% endblock %}
+
+{% block page_title %}
+    Salle
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+
+        <div class="row">
+
+            <a class="btn btn-primary " href="{{ path('salle_new') }}" role="button">+</a>
+
+        </div>
+
+        <div class="row">
+
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Nbre places</th>
+                    <th scope="col">Options</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for salle in salles %}
+
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>{{ salle.name }}</td>
+                        <td>{{ salle.nbPlaces }}</td>
+                        <td>
+                            <a class="btn btn-primary" href="{{ path('salle_edit', {id: salle.id}) }}" role="button">&#x270E;</a>
+                            <a class="btn btn-primary" href="{{ path('salle_delete', {id: salle.id}) }}" role="button">&#x2716;</a>
+                        </td>
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+{% endblock %}

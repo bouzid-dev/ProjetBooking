@@ -1,0 +1,43 @@
+{% extends "base.html.twig" %}
+
+{% set active = 'home' %}
+
+{% block body %}
+
+{% endblock %}
+
+{% block page_title %}
+    Accueil
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {#<link rel="stylesheet" href="index.css">#}
+{% endblock %}
+
+{% block content %}
+
+    <section class="content" xmlns="http://www.w3.org/1999/html">
+        <div class="card">
+            <div class="header bg-red">
+                <h2 class="text-center">
+                    Booking Room
+                </h2>
+            </div>
+            <hr>
+            <div class="body">
+                <p class="text-center">
+                    <h2 class="text-center"> Trouvez les meilleures offres de réservation des salles. </h2>
+                </p>
+                <p class="text-center">Booking Room vous offre des salles de divers types : <br>
+                    Salles des fêtes, Salles des réunions, Salles des conférences...
+                </p>
+
+
+            </div>
+        </div>
+
+
+    </section>
+
+{% endblock %}

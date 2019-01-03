@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{#{ dump(form) }#}
+
+{% set active = '' %}
+
+{% block body %}
+
+{% endblock %}
+
+{% block page_title %}
+    Inscription
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {#<link rel="stylesheet" href="index.css">#}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <h3>Inscription</h3>
+            {{ form(form) }}
+        </div>
+    </div>
+{% endblock %}

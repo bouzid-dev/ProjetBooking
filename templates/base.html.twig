@@ -2,11 +2,63 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>
+            {% block title %}
+                {% block page_title '' %} |
+                {% block site_title 'Booking Room' %}
+            {% endblock %}
+        </title>
+
+        {% block stylesheets %}
+
+            <!-- Favicons -->
+
+            <!-- Online Fonts -->
+
+            <!-- Vender -->
+
+
+            <!-- Main CSS (SCSS Compile) -->
+
+            <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+            <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
+
+            <link href="{{ asset('css/normalize.min.css') }}" rel="stylesheet" />
+            <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet" />
+
+            <!-- JavaScripts -->
+
+            <!--<script src="js/modernizr.js"></script>-->
+            <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+            <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+            <![endif]-->
+
+        {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+
+        {% include 'components/_nav.html.twig' %}
+
+        {% block content %}{% endblock %}
+
+        {% include 'components/_footer.html.twig' %}
+
+        {% block javascripts %}
+            <!--script file-->
+            <script src="{{ asset('js/jquery.min.js') }}"></script>
+            <script src="{{ asset('js/bootstrap.js') }}"></script>
+            <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+            <script src="{{ asset('js/main.js') }}"></script>
+
+        {% endblock %}
+
     </body>
 </html>
